@@ -1,19 +1,24 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import HelloWorld from "./components/HelloWorld.vue";
+import axios from "axios";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     HelloWorld
+  },
+  mounted() {
+    let url =
+      "http://zhuzhujiang.xin:7300/mock/5e7387f7c227203f23d8bc9b/example/mock";
+    axios.get(url).then(() => {});
   }
-}
+};
 </script>
 
 <style>
