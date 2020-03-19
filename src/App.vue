@@ -7,16 +7,26 @@
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
-import axios from "axios";
+// import axios from "axios";
+import jsonp from "jsonp";
 export default {
   name: "App",
   components: {
     HelloWorld
   },
+  data() {
+    return {
+      data: ""
+    };
+  },
   mounted() {
     let url =
-      "http://zhuzhujiang.xin:7300/mock/5e7387f7c227203f23d8bc9b/example/mock";
-    axios.get(url).then(() => {});
+      "https://order.imooc.com/pay/cartorder?jsonpcallback=jQuery19107668782984683105_1584631429107&_=1584631429108";
+    // axios.get(url).then(() => {});
+    jsonp(url, (err, res) => {
+      let result = res;
+      this.data = result;
+    });
   }
 };
 </script>
