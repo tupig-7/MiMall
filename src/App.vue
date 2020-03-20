@@ -6,13 +6,18 @@
 
 <script>
 // import axios from "axios";
+import storage from "./storage/index";
 export default {
   name: "App",
   components: {},
   data() {
     return {};
   },
-  mounted() {}
+  mounted() {
+    //storage.setItem("a", 1);
+    // storage.setItem("abc", { a: 1 }, "user");
+    storage.clear("mall", "mall");
+  }
 };
 </script>
 
